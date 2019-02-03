@@ -4,6 +4,7 @@ from urllib.parse import urljoin
 import urllib.request
 import time
 import sys
+import logging
 """
 If there is a problem with recursion limit, set a new limit
 Extensions are to prevent the program from entering not. html files so as to it won't return errors
@@ -74,6 +75,7 @@ def get_urls(changing_url, set_of_urls, main_url):
                     pass
         return set_of_urls
     except urllib.error.HTTPError or ValueError:
+        logging.warning('HttpError, can\'t access the website')
         pass
 
 
