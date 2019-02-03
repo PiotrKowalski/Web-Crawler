@@ -163,7 +163,8 @@ def test_get_titles_and_links():
             }
         }
     }
-    assert get_titles_and_links(get_urls(url, set(), url), url) == expected_result
+    set_of_urls = get_urls(url, set(), url)
+    assert get_titles_and_links(set_of_urls, url) == expected_result
 
 def test_site_map():
     url = "https://halome.nu/"
